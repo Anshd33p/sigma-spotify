@@ -16,7 +16,7 @@ body{
 
 }
 .right{
-    width: 75vw;
+    width: 73vw;
 }
 .home ul li {
     display: flex;
@@ -25,9 +25,6 @@ body{
     gap: 15px;
     padding-top: 14px;
     font-weight: bold;
-}
-.home{
-    
 }
 .invert{
     filter: invert(1);
@@ -57,7 +54,63 @@ body{
     gap: 11px;
     position: absolute;
     bottom: 0;
+    padding: 10px 0;
 }
 .footer a{
     color: grey;
+}
+
+.right{
+    margin: 16px 0;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(34, 34, 34) ;
+}
+.header >*{
+    padding: 4px;
+}
+.spotifyPlaylist{
+    padding: 16px;
+    
+}
+.cardContainer{
+    margin: 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.card{
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #252525;
+    position: relative;
+}
+.card > *{
+    padding-top: 10px;
+}
+.card img{
+    width: 100%;
+    object-fit: contain;
+}
+.play{
+    width: 28px;
+    height: 28px;
+    background-color: #1fdf64;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    bottom: 109px;
+    right: 18px;
+    opacity: 0;
+    transition: all 5ms ease-out;
+}
+.card:hover .play{
+    opacity: 1;
 }
