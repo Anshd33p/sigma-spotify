@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Spotify - Web Player: Music for everyone</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utility.css">
 </head>
@@ -12,7 +12,7 @@
 
         <div class="left ">
             <div class="home rounded bg-grey m-1 p-1">
-                <div class="logo"><img class="invert" src="images/logo.svg" alt=""></div>
+                <div class="logo"><img width="110" class="invert" src="images/logo.svg" alt=""></div>
                 <ul>
                     <li><img class="invert" src="/images/home.svg" alt="home">Home</li>
                     <li><img class="invert" src="/images/search.svg" alt="home">Search</li>
@@ -22,6 +22,12 @@
                 <div class="heading">
                     <img class="invert" src="images/playlist.svg" alt="">
                     <h2>Your library</h2>
+                </div>
+                <div class="songList">
+
+                    <ul>
+                       
+                    </ul>
                 </div>
             <div class="footer">
                 <div><a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a></div>
@@ -50,13 +56,40 @@
                     </svg>
                 </div>
                 <div class="buttons">
-                    <button>Sign Up</button>
-                    <button>Login</button>
+                    <button class="signupbtn">Sign Up</button>
+                    <button class="loginbtn">Login in</button>
                 </div>
             </div>
             <div class="spotifyPlaylist">
                 <h1>Spotify Playlists</h1>
                 <div class="cardContainer">
+                    <div class="card">
+                        <div class="play">
+                            <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="50" fill="#1fdf64"/>
+                                <svg x="12" y="12" width="76" height="76" viewBox="0 0 24 24">
+                                  <path d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z" fill="black" stroke="black" stroke-width="1"/>
+                                </svg>
+                              </svg>                              
+                        </div>
+                        <img src="	https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_in_default.jpg" alt="">
+                        <h2>Happy Hits!</h2>
+                        <p>Hits to boost your mood and fill you with happiness</p>
+                    </div>
+                   
+                    <div class="card">
+                        <div class="play">
+                            <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="50" fill="#1fdf64"/>
+                                <svg x="12" y="12" width="76" height="76" viewBox="0 0 24 24">
+                                  <path d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z" fill="black" stroke="black" stroke-width="1"/>
+                                </svg>
+                              </svg>                              
+                        </div>
+                        <img src="	https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_in_default.jpg" alt="">
+                        <h2>Happy Hits!</h2>
+                        <p>Hits to boost your mood and fill you with happiness</p>
+                    </div>
                     <div class="card">
                         <div class="play">
                             <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -85,9 +118,28 @@
                     </div>
                     
                 </div>
+                <div class="playbar">
+                    <div class="seekbar">
+                        <div class="circle">
+
+                        </div>
+                    </div>
+                    <div class="aboveBar">
+
+                        <div class="songInfo"></div>
+                        <div class="songButtons">
+                            <img id="previous" src="images/prevsong.svg" alt="" srcset="">
+                            <img id="play" src="images/play.svg" alt="" srcset="">
+                            <img id="next" src="images/nextsong.svg" alt="" srcset="">
+                        </div>
+                        <div class="songTime"></div>
+                    </div>
+                </div>
             </div>
+            
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
