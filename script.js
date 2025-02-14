@@ -1,7 +1,11 @@
 console.log('Hello, world!');
 let currentSong= new Audio();
+let songs;
 
 function formatTime(seconds) {
+    if (isNaN(seconds)) {
+        return "00:00";
+    }
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = Math.floor(seconds % 60);
     return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
@@ -33,7 +37,7 @@ const playMusic = (track, pause= false)=>{
 async function main(){
     
 
-    let songs = await getSongs()
+    songs = await getSongs()
     playMusic(songs[0], true);
     // show all the songs in the playlist
     let songUL=document.querySelector('.songList').getElementsByTagName('ul')[0];
@@ -95,6 +99,33 @@ async function main(){
     document.querySelector('.close').addEventListener('click',()=>{
         document.querySelector('.left').style.left="-120%";
     })
+    //add an event listener for the previous and the next buttons
+    previous.addEventListener('click',()=>{
+        currentSong.pause();
+        let index = songs.indexOf(currentSong.src.split("/songs/")[1]);
+        console.log(songs, index);
+        if((index-1)>=0){
+
+            playMusic(songs[index-1]);
+        }else{
+            playMusic(songs[songs.length-1]);
+        }
+    })
+    next.addEventListener('click',()=>{
+        currentSong.pause();
+        let index = songs.indexOf(currentSong.src.split("/songs/")[1]);
+        console.log(songs, index);
+        if((index+1)<songs.length){
+            playMusic(songs[index+1]);
+        }else{
+            playMusic(songs[0]);
+        }
+    })
+    //add an event to volume
+        document.querySelector('.range').getElementsByTagName('input')[0].addEventListener('change',e=>{
+            console.log(e.target.value);     
+            currentSong.volume = parseInt(e.target.value)/100;   
+        })
 } 
 main()
 
